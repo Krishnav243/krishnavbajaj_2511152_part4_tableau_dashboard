@@ -150,7 +150,7 @@ Tracks monthly sales performance over time and identifies sales trends and seaso
 
 ### Screenshot
 
-```markdown
+
 ![Sales Trend](screenshots/sales_trend_view.png)
 ```
 
@@ -168,7 +168,6 @@ Compares sales performance across regions and highlights regional differences.
 
 ### Screenshot
 
-```markdown
 ![Regional Performance](screenshots/regional_performance_view.png)
 ```
 
@@ -186,7 +185,7 @@ Compares profitability across product categories and identifies the most profita
 
 ### Screenshot
 
-```markdown
+
 ![Category Profitability](screenshots/category_profitability_view.png)
 ```
 
@@ -265,7 +264,6 @@ This feature improves dashboard usability and enables deeper analysis.
 
 # Dashboard Screenshot
 
-```markdown
 ![Executive Dashboard](screenshots/full_dashboard.png)
 ```
 
@@ -287,7 +285,7 @@ Selecting a region such as North updates:
 
 ### Screenshot
 
-```markdown
+
 ![Filter Interaction](screenshots/filter_interaction_view.png)
 ```
 
