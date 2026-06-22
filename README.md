@@ -2,143 +2,59 @@
 
 ## Project Overview
 
-This project focuses on building an interactive executive dashboard using Tableau to analyze sales performance, profitability, customer behavior, shipping efficiency, and return trends.
+This project presents an interactive Tableau dashboard designed to analyze retail sales performance across different business dimensions. The dashboard provides insights into sales trends, profitability, customer segments, shipping efficiency, product returns, and regional performance.
 
-The dashboard enables business users and decision-makers to explore key performance metrics through interactive visualizations and filters. It provides insights into regional performance, product category profitability, customer segment behavior, discount impact, shipping performance, and product returns.
-
----
-
-# Project Objectives
-
-The primary objectives of this project are:
-
-* Analyze overall sales and profitability performance.
-* Identify high-performing and low-performing regions.
-* Evaluate profitability across product categories.
-* Understand customer segment contribution to revenue.
-* Examine the impact of discounts on profitability.
-* Monitor shipping efficiency.
-* Analyze product return patterns.
-* Provide an interactive executive dashboard for business decision-making.
+The objective of this dashboard is to help business stakeholders make data-driven decisions through interactive visualizations and filters.
 
 ---
 
-# Dataset Description
+# Dashboard Preview
 
-The dataset contains retail sales transaction data with information related to:
-
-* Orders
-* Customers
-* Regions
-* Product Categories
-* Sales
-* Profit
-* Discounts
-* Shipping
-* Returns
-
-### Key Variables
-
-| Variable         | Description               |
-| ---------------- | ------------------------- |
-| Order ID         | Unique order identifier   |
-| Order Date       | Date of order placement   |
-| Ship Date        | Date of shipment          |
-| Region           | Geographic region         |
-| Customer Segment | Customer classification   |
-| Category         | Product category          |
-| Sales            | Sales amount              |
-| Profit           | Profit amount             |
-| Discount         | Discount percentage       |
-| Return Flag      | Indicates returned orders |
-| Delivery Days    | Shipping duration         |
-| Ship Mode        | Shipping method           |
+![Retail Executive Dashboard](screenshots/full_dashboard.png)
 
 ---
 
-# Calculated Fields Created
+# Business Objectives
 
-The following calculated fields were created in Tableau:
+The dashboard was developed to answer the following business questions:
 
-## Profit Margin
-
-```tableau
-SUM([Profit]) / SUM([Sales])
-```
-
-Purpose:
-Measures profitability relative to sales revenue.
-
----
-
-## Cost
-
-```tableau
-SUM([Sales]) - SUM([Profit])
-```
-
-Purpose:
-Estimates product cost contribution.
+* Which regions generate the highest sales?
+* Which product categories are the most profitable?
+* How do different customer segments contribute to revenue?
+* What impact do discounts have on profit?
+* Which shipping modes provide the fastest delivery?
+* Which product categories experience the highest return rates?
+* How do sales fluctuate throughout the year?
 
 ---
 
-## Average Order Value
+# Key Performance Indicators (KPIs)
 
-```tableau
-SUM([Sales]) / COUNTD([Order Id])
-```
+The dashboard includes the following KPI cards:
 
-Purpose:
-Measures average revenue generated per order.
+### Total Sales
 
----
+Measures overall revenue generated.
 
-## Return Rate
+**Value:** 217,017,652
 
-```tableau
-SUM([Return Flag]) / COUNT([Order Id])
-```
+### Total Profit
 
-Purpose:
+Measures total profit earned.
+
+**Value:** 33,306,313
+
+### Return Rate
+
 Measures the percentage of returned orders.
 
----
-
-## Shipping Delay Bucket
-
-```tableau
-IF [Delivery Days] <= 2 THEN "Fast"
-ELSEIF [Delivery Days] <= 5 THEN "Normal"
-ELSE "Delayed"
-END
-```
-
-Purpose:
-Classifies delivery performance.
+**Value:** 4.55%
 
 ---
 
 # Dashboard Components
 
-## KPI Cards
-
-The dashboard includes three KPI cards:
-
-### Total Sales
-
-Displays overall sales generated across all orders.
-
-### Total Profit
-
-Displays total profit generated.
-
-### Return Rate
-
-Displays the percentage of returned orders.
-
----
-
-## Sales Trend Analysis
+## 1. Sales Trend Over Time
 
 ### Chart Type
 
@@ -150,13 +66,11 @@ Tracks monthly sales performance over time and identifies sales trends and seaso
 
 ### Screenshot
 
-
 ![Sales Trend](screenshots/sales_trend_view.png)
-```
 
 ---
 
-## Regional Performance Analysis
+## 2. Regional Performance Analysis
 
 ### Chart Type
 
@@ -169,11 +83,10 @@ Compares sales performance across regions and highlights regional differences.
 ### Screenshot
 
 ![Regional Performance](screenshots/regional_performance_view.png)
-```
 
 ---
 
-## Category Profitability Analysis
+## 3. Category Profitability Analysis
 
 ### Chart Type
 
@@ -181,17 +94,15 @@ Bar Chart
 
 ### Purpose
 
-Compares profitability across product categories and identifies the most profitable categories.
+Compares profit generated by each product category and identifies the most profitable category.
 
 ### Screenshot
 
-
 ![Category Profitability](screenshots/category_profitability_view.png)
-```
 
 ---
 
-## Customer Segment Analysis
+## 4. Customer Segment Analysis
 
 ### Chart Type
 
@@ -199,11 +110,11 @@ Bar Chart
 
 ### Purpose
 
-Evaluates revenue contribution across customer segments.
+Analyzes sales contribution across different customer segments.
 
 ---
 
-## Discount vs Profit Analysis
+## 5. Discount vs Profit Analysis
 
 ### Chart Type
 
@@ -215,7 +126,7 @@ Examines the relationship between discounts and profitability.
 
 ---
 
-## Shipping Performance Analysis
+## 6. Shipping Performance Analysis
 
 ### Chart Type
 
@@ -223,11 +134,11 @@ Bar Chart
 
 ### Purpose
 
-Compares average delivery times across shipping modes.
+Compares average delivery times across different shipping modes.
 
 ---
 
-## Return Analysis
+## 7. Return Analysis
 
 ### Chart Type
 
@@ -239,83 +150,104 @@ Compares return rates across product categories.
 
 ---
 
-# Interactive Features
+# Interactive Dashboard Features
 
-The dashboard includes multiple interactive features.
+The dashboard supports interactive exploration through:
 
-## Filters
-
-Users can dynamically filter dashboard results using:
+### Filters
 
 * Region
 * Category
 * Customer Segment
 * Order Date
 
----
+### Dashboard Actions
 
-## Dashboard Actions
+Users can select a region and automatically filter all charts and KPI cards across the dashboard.
 
-A filter action was implemented to allow users to click a region and automatically update all related visualizations.
+### Example Interaction
 
-This feature improves dashboard usability and enables deeper analysis.
-
----
-
-# Dashboard Screenshot
-
-![Executive Dashboard](screenshots/full_dashboard.png)
-```
-
----
-
-# Filter Interaction Example
-
-The dashboard supports dynamic filtering.
-
-Example:
-Selecting a region such as North updates:
-
-* KPI Cards
-* Sales Trend
-* Category Profitability
-* Customer Segment Analysis
-* Return Analysis
-* Shipping Performance
-
-### Screenshot
-
+The screenshot below demonstrates dashboard interactivity after selecting a region.
 
 ![Filter Interaction](screenshots/filter_interaction_view.png)
-```
 
 ---
 
-# Key Findings
+# Calculated Fields Used
 
-### Regional Performance
+## Profit Margin
 
-The South region generated the highest overall sales performance.
+```text
+SUM([Profit]) / SUM([Sales])
+```
 
-### Product Profitability
+Purpose: Measures profitability relative to sales.
 
-Technology products generated the highest profits among all categories.
+### Cost
 
-### Customer Segments
+```text
+SUM([Sales]) - SUM([Profit])
+```
 
-Home Office customers contributed significantly to overall sales.
+Purpose: Estimates product cost.
 
-### Returns
+### Average Order Value
 
-Furniture products exhibited the highest return rate.
+```text
+SUM([Sales]) / COUNTD([Order Id])
+```
 
-### Shipping
+Purpose: Measures average revenue per order.
 
-Standard Class shipping demonstrated longer delivery durations compared to premium shipping methods.
+### Return Rate
 
-### Discounts
+```text
+SUM([Return Flag]) / COUNT([Order Id])
+```
 
-Higher discounts were associated with lower profitability.
+Purpose: Calculates the percentage of returned orders.
+
+### Shipping Delay Bucket
+
+```text
+IF [Delivery Days] <= 2 THEN "Fast"
+ELSEIF [Delivery Days] <= 5 THEN "Normal"
+ELSE "Delayed"
+END
+```
+
+Purpose: Categorizes delivery performance.
+
+---
+
+# Key Business Insights
+
+### Regional Insights
+
+* South region generated the highest sales performance.
+* North region demonstrated strong revenue contribution.
+* East and West regions showed comparatively lower sales.
+
+### Product Insights
+
+* Technology category generated the highest profit.
+* Furniture category experienced the highest return rate.
+* Office Supplies delivered moderate profitability.
+
+### Customer Insights
+
+* Home Office customers contributed the highest sales.
+* Consumer and Corporate segments generated comparable revenue.
+
+### Shipping Insights
+
+* Same Day shipping achieved the fastest delivery.
+* Standard Class shipping required the longest average delivery time.
+
+### Profitability Insights
+
+* Higher discounts generally resulted in reduced profitability.
+* Maintaining balanced discount strategies can improve margins.
 
 ---
 
@@ -348,14 +280,16 @@ krishnavbajaj_2511152_part4_tableau_dashboard/
 
 ---
 
-# Tools Used
+# Tools and Technologies
 
-* Tableau Desktop
+* Tableau Public
 * Microsoft Excel
 * GitHub
+* Data Visualization Techniques
+* Business Intelligence Concepts
 
 ---
 
 # Conclusion
 
-The Retail Executive Performance Dashboard provides a comprehensive view of sales, profitability, customer behavior, shipping efficiency, and return performance. Through interactive visualizations and filtering capabilities, the dashboard enables business stakeholders to make informed decisions and identify opportunities for growth and operational improvement.
+The Retail Executive Performance Dashboard provides a comprehensive view of business performance by integrating sales, profit, customer, shipping, and return metrics into a single interactive platform. Through visual analytics and dashboard interactivity, users can quickly identify trends, monitor performance, and support strategic business decisions.
